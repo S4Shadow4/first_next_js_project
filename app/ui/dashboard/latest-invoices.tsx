@@ -2,24 +2,26 @@ import { ArrowPathIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { poppins } from '@/app/ui/fonts';
-import { LatestInvoice } from '@/app/lib/definitions';
+/* import { LatestInvoice } from '@/app/lib/definitions'; */
 
-export default async function LatestInvoices({
+import { fetchLatestInvoices } from '@/app/lib/data';
+
+export default async function LatestInvoices(/*  {
   latestInvoices,
 }: {
   latestInvoices: LatestInvoice[];
-}) {
+} */ ) {
+  const latestInvoices = await fetchLatestInvoices();
   return (
     <div className="flex w-full flex-col md:col-span-4">
       <h2
-        className={`${poppins.className} mb-4 text-xl text-white md:text-2xl`}
+        className={`${poppins.className} mb-4 text-xl text-black md:text-2xl`}
       >
         Latest Invoices
       </h2>
-      <div className="flex grow flex-col justify-between rounded-xl bg-neutral-700 p-4">
-        {/* Attention! Uncomment this section when you reach this stage in the course. */}
+      <div className="flex grow flex-col justify-between rounded-xl bg-gray-200 p-4">
 
-        {/* <div className="bg-neutral-00 px-6">
+        <div className="bg-neutral-00 px-6">
           {latestInvoices.map((invoice, i) => {
             return (
               <div
@@ -27,7 +29,7 @@ export default async function LatestInvoices({
                 className={clsx(
                   'flex flex-row items-center justify-between py-4',
                   {
-                    'border-t': i !== 0,
+                    'border-t border-black': i !== 0,
                   },
                 )}
               >
@@ -40,27 +42,27 @@ export default async function LatestInvoices({
                     height={32}
                   />
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-bold text-white md:text-base">
+                    <p className="truncate text-sm font-bold text-black md:text-base">
                       {invoice.name}
                     </p>
-                    <p className="hidden text-sm text-white sm:block">
+                    <p className="hidden text-sm text-black sm:block">
                       {invoice.email}
                     </p>
                   </div>
                 </div>
                 <p
-                  className={`${poppins.className} truncate text-sm font-medium text-white md:text-base`}
+                  className={`${poppins.className} truncate text-sm font-medium text-black md:text-base`}
                 >
                   {invoice.amount}
                 </p>
               </div>
             );
           })}
-        </div> */}
+        </div>
 
         <div className="flex items-center pb-2 pt-6">
-          <ArrowPathIcon className="h-5 w-5 text-white" />
-          <h3 className="ml-2 text-sm text-white ">Updated just now</h3>
+          <ArrowPathIcon className="h-5 w-5 text-black" />
+          <h3 className="ml-2 text-sm text-black ">Updated just now</h3>
         </div>
       </div>
     </div>

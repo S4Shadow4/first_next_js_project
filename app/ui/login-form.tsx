@@ -1,3 +1,5 @@
+'use client';
+
 import { poppins } from '@/app/ui/fonts';
 import {
   UserIcon,
@@ -7,11 +9,17 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 
+import { useFormState } from 'react-dom';
+import { authenticate } from '@/app/lib/actions';
+
 export default function LoginForm() {
+  const [_, dispatch] = useFormState(authenticate, undefined);
+
+
   return (
-    <form className="space-y-3">
-      <div className="flex-1 rounded-lg bg-neutral-900 px-6 pb-4 pt-8">
-        <h1 className={`${poppins.className} mb-3 text-3xl text-white`}>
+    <form action={dispatch} className="space-y-3">
+      <div className="flex-1 rounded-lg bg-neutral-300 px-6 pb-4 pt-8 bg-[#E0E0E0]">
+        <h1 className={`${poppins.className} mb-3 text-3xl text-black`}>
           Please log in to continue.
         </h1>
         <div className="w-full">
@@ -68,8 +76,8 @@ export default function LoginForm() {
 
 function LoginButton() {
   return (
-    <Button className="mt-8 w-full">
-      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-white" />
+    <Button className="mt-8 w-full bg-[#8DC03F]">
+      Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-black" />
     </Button>
   );
 }

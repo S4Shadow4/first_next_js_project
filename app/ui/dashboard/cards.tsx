@@ -1,3 +1,5 @@
+import { fetchCardData } from '@/app/lib/data';
+
 import {
   BanknotesIcon,
   ClockIcon,
@@ -14,14 +16,20 @@ const iconMap = {
 };
 
 export default async function CardWrapper() {
+  const {
+    totalFulfilledInvoices,
+    totalAwaitingInvoices,
+    numberOfInvoices,
+    numberOfSellers
+
+  } = await fetchCardData();
+
   return (
     <>
-      {/* Attention! Uncomment this section when you reach this stage in the course. */}
-
-      {/* <Card title="Earned" value={totalFulfilledInvoices} type="earned" />
+      <Card title="Earned" value={totalFulfilledInvoices} type="earned" />
       <Card title="In Progress" value={totalAwaitingInvoices} type="awaiting" />
       <Card title="All Invoices" value={numberOfInvoices} type="invoices" />
-      <Card title="Total Sellers" value={numberOfSellers} type="sellers" /> */}
+      <Card title="Total Sellers" value={numberOfSellers} type="sellers" />
     </>
   );
 }
@@ -38,14 +46,14 @@ export function Card({
   const Icon = iconMap[type];
 
   return (
-    <div className="rounded-xl bg-neutral-700 p-2 shadow-sm">
-      <div className="flex bg-neutral-700 p-4">
+    <div className="rounded-xl bg-[#8DC03F] p-2 shadow-sm">
+      <div className="flex bg-[#8DC03F] p-4">
         {Icon ? <Icon className="h-5 w-5 text-white" /> : null}
         <h3 className="ml-2 text-sm font-medium text-white">{title}</h3>
       </div>
       <p
         className={`${rubik.className}
-          truncate rounded-xl bg-sky-700 px-4 py-8 text-center text-2xl text-white`}
+          truncate rounded-xl bg-[#F2F2F2] px-4 py-8 text-center text-2xl text-black`}
       >
         {value}
       </p>

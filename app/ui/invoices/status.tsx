@@ -7,8 +7,8 @@ export default function InvoiceStatus({ status }: { status: string }) {
       className={clsx(
         'text-m inline-flex items-center rounded-full px-2 py-1',
         {
-          'bg-red-600 text-white': status === 'awaiting',
-          'bg-lime-400 text-sky-700': status === 'fulfilled',
+          'bg-red-500 text-white': status === 'awaiting',
+          'bg-[#8DC03F] text-white': status === 'fulfilled',
         },
       )}
     >
@@ -21,7 +21,7 @@ export default function InvoiceStatus({ status }: { status: string }) {
       {status === 'fulfilled' ? (
         <>
           Fulfilled
-          <CheckIcon className="ml-1 w-5 text-sky-700" />
+          <CheckIcon className="ml-1 w-5 text-white" />
         </>
       ) : null}
     </span>

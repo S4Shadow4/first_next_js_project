@@ -10,6 +10,8 @@ import {
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 
+import { updateInvoice } from '@/app/lib/actions';
+
 export default function EditInvoiceForm({
   invoice,
   sellers,
@@ -17,13 +19,17 @@ export default function EditInvoiceForm({
   invoice: InvoiceForm;
   sellers: SellerField[];
 }) {
+
+  const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
+
+
   return (
-    <form>
-      <div className="rounded-md bg-neutral-700 p-4 md:p-6">
+    <form action={updateInvoiceWithId}>
+      <div className="rounded-md bg-gray-300 p-4 md:p-6">
         <div className="mb-4">
           <label
             htmlFor="seller"
-            className="mb-2 block text-sm font-medium text-white"
+            className="mb-2 block text-sm font-medium text-black"
           >
             Seller
           </label>
@@ -51,7 +57,7 @@ export default function EditInvoiceForm({
         <div className="mb-4">
           <label
             htmlFor="amount"
-            className="mb-2 block text-sm font-medium text-white"
+            className="mb-2 block text-sm font-medium text-black"
           >
             Choose a sum
           </label>
@@ -72,7 +78,7 @@ export default function EditInvoiceForm({
         </div>
 
         <fieldset>
-          <legend className="mb-2 block text-sm font-medium text-white">
+          <legend className="mb-2 block text-sm font-medium text-black">
             Set the invoice status
           </legend>
           <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
@@ -104,7 +110,7 @@ export default function EditInvoiceForm({
                 />
                 <label
                   htmlFor="fulfilled"
-                  className=" ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-lime-400 px-3 py-1.5 text-xs font-medium text-sky-700"
+                  className=" ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-[#8DC03F] px-3 py-1.5 text-xs font-medium text-white"
                 >
                   Fulfilled <CheckIcon className="h-4 w-4" />
                 </label>

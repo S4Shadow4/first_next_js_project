@@ -7,7 +7,7 @@ export default function TradeHubLogo() {
       className={`${rubik.className} flex flex-row items-center leading-none text-white `}
     >
       <ShoppingCartIcon className="mr-6 h-16  w-16" />
-      <p className="text-[44px]">YannTrade</p>
+      <p className="text-[44px] text-white">TradeInfinix</p>
     </div>
   );
 }

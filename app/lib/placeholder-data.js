@@ -5,12 +5,18 @@ const users = [
     email: 'user@mail.com',
     password: '123456',
   },
+  {
+    id: '760e7a08-97f8-11ee-b9d1-0242ac120004',
+    name: 'yann',
+    email: 'yann@mail.com',
+    password: '12345678',
+  }
 ];
 
 const sellers = [
   {
     id: '8214a6f6-97f8-11ee-b9d1-0242ac120002',
-    name: 'Silvia Wuckert',
+    name: 'Yann AGB',
     email: 'silvia@wuckert.com',
     image_url: '/sellers/silvia-wuckert.png',
   },

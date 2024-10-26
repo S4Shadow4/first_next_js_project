@@ -4,14 +4,14 @@ const shimmer =
 export function CardSkeleton() {
   return (
     <div
-      className={`${shimmer} relative overflow-hidden rounded-xl bg-neutral-700 p-2 shadow-sm`}
+      className={`${shimmer} relative overflow-hidden rounded-xl  bg-[#8DC03F] p-2 shadow-sm`}
     >
       <div className="flex p-4">
-        <div className="h-5 w-5 rounded-md bg-neutral-700" />
-        <div className="ml-2 h-6 w-16 rounded-md bg-neutral-700 text-sm font-medium" />
+        <div className="h-5 w-5 rounded-md bg-[#8DC03F]" />
+        <div className="ml-2 h-6 w-16 rounded-md bg-[#8DC03F] text-sm font-medium" />
       </div>
-      <div className="flex items-center justify-center truncate rounded-xl bg-sky-700 px-4 py-8">
-        <div className="h-7 w-20 rounded-md bg-neutral-700" />
+      <div className="flex items-center justify-center truncate rounded-xl bg-gray-300 px-4 py-8">
+        <div className="h-7 w-20 rounded-md bg-[#8DC03F]" />
       </div>
     </div>
   );
@@ -31,12 +31,12 @@ export function CardsSkeleton() {
 export function IncomeChartSkeleton() {
   return (
     <div className={`${shimmer} relative w-full overflow-hidden md:col-span-4`}>
-      <div className="mb-4 h-8 w-36 rounded-md bg-neutral-700" />
-      <div className="rounded-xl bg-neutral-700 p-4">
-        <div className="mt-0 grid h-[410px] grid-cols-12 items-end gap-2 rounded-md bg-sky-700 p-4 sm:grid-cols-13 md:gap-4" />
+      <div className="mb-4 h-8 w-36 rounded-md bg-[#8DC03F]" />
+      <div className="rounded-xl bg-[#8DC03F] p-4">
+        <div className="mt-0 grid h-[410px] grid-cols-12 items-end gap-2 rounded-md bg-gray-300 p-4 sm:grid-cols-13 md:gap-4" />
         <div className="flex items-center pb-2 pt-6">
-          <div className="h-5 w-5 rounded-full bg-neutral-700" />
-          <div className="ml-2 h-4 w-20 rounded-md bg-neutral-700" />
+          <div className="h-5 w-5 rounded-full bg-[#8DC03F]" />
+          <div className="ml-2 h-4 w-20 rounded-md bg-[#8DC03F]" />
         </div>
       </div>
     </div>
@@ -45,15 +45,15 @@ export function IncomeChartSkeleton() {
 
 export function InvoiceSkeleton() {
   return (
-    <div className="flex flex-row items-center justify-between border-b border-gray-100 py-4">
+    <div className="flex flex-row items-center justify-between border-b border-gray-300 py-4">
       <div className="flex items-center">
-        <div className="mr-2 h-8 w-8 rounded-full bg-neutral-700" />
+        <div className="mr-2 h-8 w-8 rounded-full bg-[#8DC03F]" />
         <div className="min-w-0">
-          <div className="h-5 w-40 rounded-md bg-neutral-700" />
-          <div className="mt-2 h-4 w-12 rounded-md bg-neutral-700" />
+          <div className="h-5 w-40 rounded-md bg-[#8DC03F]" />
+          <div className="mt-2 h-4 w-12 rounded-md bg-[#8DC03F]" />
         </div>
       </div>
-      <div className="mt-2 h-4 w-12 rounded-md bg-neutral-700" />
+      <div className="mt-2 h-4 w-12 rounded-md bg-[#8DC03F]" />
     </div>
   );
 }
@@ -63,17 +63,17 @@ export function LatestInvoicesSkeleton() {
     <div
       className={`${shimmer} relative flex w-full flex-col overflow-hidden md:col-span-4`}
     >
-      <div className="mb-4 h-8 w-36 rounded-md bg-neutral-700" />
-      <div className="flex grow flex-col justify-between rounded-xl bg-neutral-700 p-4">
-        <div className="bg-sky-700 px-6">
+      <div className="mb-4 h-8 w-36 rounded-md bg-[#8DC03F]" />
+      <div className="flex grow flex-col justify-between rounded-xl bg-[#8DC03F] p-4">
+        <div className="bg-gray-300 px-6">
           <InvoiceSkeleton />
           <InvoiceSkeleton />
           <InvoiceSkeleton />
           <InvoiceSkeleton />
           <InvoiceSkeleton />
           <div className="flex items-center pb-2 pt-6">
-            <div className="h-5 w-5 rounded-full bg-neutral-700" />
-            <div className="ml-2 h-4 w-20 rounded-md bg-neutral-700" />
+            <div className="h-5 w-5 rounded-full bg-[#8DC03F]" />
+            <div className="ml-2 h-4 w-20 rounded-md bg-[#8DC03F]" />
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@ export default function DashboardSkeleton() {
   return (
     <>
       <div
-        className={`${shimmer} relative mx-auto mb-4 h-8 w-36 overflow-hidden rounded-md bg-neutral-700`}
+        className={`${shimmer} relative mx-auto mb-4 h-8 w-36 overflow-hidden rounded-md bg-[#8DC03F]`}
       />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <CardSkeleton />
@@ -106,31 +106,31 @@ export function TableRowSkeleton() {
     <tr className="w-full border-b border-neutral-700 last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg">
       <td className="relative overflow-hidden whitespace-nowrap py-3 pl-6 pr-3">
         <div className="flex items-center gap-3">
-          <div className="h-8 w-8 rounded-full bg-neutral-700"></div>
-          <div className="h-6 w-24 rounded bg-neutral-700"></div>
+          <div className="h-8 w-8 rounded-full bg-[#8DC03F]"></div>
+          <div className="h-6 w-24 rounded bg-[#8DC03F]"></div>
         </div>
       </td>
 
       <td className="whitespace-nowrap px-3 py-3">
-        <div className="h-6 w-32 rounded bg-neutral-700"></div>
+        <div className="h-6 w-32 rounded bg-[#8DC03F]"></div>
       </td>
 
       <td className="whitespace-nowrap px-3 py-3">
-        <div className="h-6 w-16 rounded bg-neutral-700"></div>
+        <div className="h-6 w-16 rounded bg-bg-[#8DC03F]"></div>
       </td>
 
       <td className="whitespace-nowrap px-3 py-3">
-        <div className="h-6 w-16 rounded bg-neutral-700"></div>
+        <div className="h-6 w-16 rounded bg-[#8DC03F]"></div>
       </td>
 
       <td className="whitespace-nowrap px-3 py-3">
-        <div className="h-6 w-16 rounded bg-neutral-700"></div>
+        <div className="h-6 w-16 rounded bg-[#8DC03F]"></div>
       </td>
 
       <td className="whitespace-nowrap py-3 pl-6 pr-3">
         <div className="flex justify-end gap-3">
-          <div className="h-[38px] w-[38px] rounded bg-neutral-700"></div>
-          <div className="h-[38px] w-[38px] rounded bg-neutral-700"></div>
+          <div className="h-[38px] w-[38px] rounded bg-[#8DC03F]"></div>
+          <div className="h-[38px] w-[38px] rounded bg-[#8DC03F]"></div>
         </div>
       </td>
     </tr>
@@ -139,22 +139,22 @@ export function TableRowSkeleton() {
 
 export function InvoicesMobileSkeleton() {
   return (
-    <div className="mb-2 w-full rounded-md bg-sky-700 p-4">
+    <div className="mb-2 w-full rounded-md bg-gray-300 p-4">
       <div className="flex items-center justify-between border-b border-neutral-700 pb-8">
         <div className="flex items-center">
-          <div className="mr-2 h-8 w-8 rounded-full bg-neutral-700"></div>
-          <div className="h-6 w-16 rounded bg-neutral-700"></div>
+          <div className="mr-2 h-8 w-8 rounded-full bg-[#8DC03F]"></div>
+          <div className="h-6 w-16 rounded bg-[#8DC03F]"></div>
         </div>
-        <div className="h-6 w-16 rounded bg-neutral-700"></div>
+        <div className="h-6 w-16 rounded bg-[#8DC03F]"></div>
       </div>
       <div className="flex w-full items-center justify-between pt-4">
         <div>
-          <div className="h-6 w-16 rounded bg-neutral-700"></div>
-          <div className="mt-2 h-6 w-24 rounded bg-neutral-700"></div>
+          <div className="h-6 w-16 rounded bg-[#8DC03F]"></div>
+          <div className="mt-2 h-6 w-24 rounded bg-[#8DC03F]"></div>
         </div>
         <div className="flex justify-end gap-2">
-          <div className="h-10 w-10 rounded bg-neutral-700"></div>
-          <div className="h-10 w-10 rounded bg-neutral-700"></div>
+          <div className="h-10 w-10 rounded bg-[#8DC03F]"></div>
+          <div className="h-10 w-10 rounded bg-[#8DC03F]"></div>
         </div>
       </div>
     </div>
@@ -165,7 +165,7 @@ export function InvoicesTableSkeleton() {
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-neutral-700 p-2 md:pt-0">
+        <div className="rounded-lg bg-[#8DC03F] p-2 md:pt-0">
           <div className="md:hidden">
             <InvoicesMobileSkeleton />
             <InvoicesMobileSkeleton />
@@ -200,7 +200,7 @@ export function InvoicesTableSkeleton() {
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-sky-700">
+            <tbody className="bg-gray-300">
               <TableRowSkeleton />
               <TableRowSkeleton />
               <TableRowSkeleton />

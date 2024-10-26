@@ -5,16 +5,25 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { generatePagination } from '@/app/lib/utils';
 
-export default function Pagination({ totalPages }: { totalPages: number }) {
-  // Attention! Uncomment this section when you reach this stage in the course.
+import { usePathname, useSearchParams } from 'next/navigation';
 
-  // const allPages = generatePagination(currentPage, totalPages);
+export default function Pagination({ totalPages }: { totalPages: number }) {
+
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentPage = Number(searchParams.get('page')) || 1;
+
+  const createPageURL = (pageNumber: number | string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('page', pageNumber.toString());
+    return `${pathname}?${params.toString()}`;
+  };
+
+  const allPages = generatePagination(currentPage, totalPages);
 
   return (
     <>
-      {/* Attention! Uncomment this section when you reach this stage in the course. */}
-
-      {/* <div className="inline-flex">
+      <div className="inline-flex">
         <PaginationArrow
           direction="left"
           href={createPageURL(currentPage - 1)}
@@ -47,7 +56,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           href={createPageURL(currentPage + 1)}
           isDisabled={currentPage >= totalPages}
         />
-      </div> */}
+      </div>
     </>
   );
 }
@@ -69,7 +78,7 @@ function PaginationNumber({
       'rounded-l-md': position === 'first' || position === 'single',
       'rounded-r-md': position === 'last' || position === 'single',
       'z-10 bg-white border-white text-neutral-900': isActive,
-      'hover:bg-sky-700 text-white': !isActive && position !== 'middle',
+      'hover:bg-[#8DC03F] text-white': !isActive && position !== 'middle',
       'text-neutral-900': position === 'middle',
     },
   );
@@ -96,7 +105,7 @@ function PaginationArrow({
     'flex h-10 w-10 items-center justify-center rounded-md border',
     {
       'pointer-events-none text-neutral-900': isDisabled,
-      'hover:bg-sky-700 text-white': !isDisabled,
+      'hover:bg-[#8DC03F] text-white': !isDisabled,
       'mr-2 md:mr-4': direction === 'left',
       'ml-2 md:ml-4': direction === 'right',
     },
@@ -104,9 +113,9 @@ function PaginationArrow({
 
   const icon =
     direction === 'left' ? (
-      <ArrowLeftIcon className="w-4" />
+      <ArrowLeftIcon className="w-4 text-gray-500" />
     ) : (
-      <ArrowRightIcon className="w-4" />
+      <ArrowRightIcon className="w-4 text-gray-500" />
     );
 
   return isDisabled ? (
